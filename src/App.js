@@ -17,7 +17,7 @@ class App extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(e.target.email.value);
-    const navigate = useNavigate();
+    
     let count = Number(localStorage.getItem('count'))
     if (!e.target.email.value) {
       toast.error("Email is required");
@@ -60,8 +60,9 @@ class App extends Component {
         })
         }
     }else{
-      //alert("Successfully logged in");
-      <Route path="/about" component={About} />
+      alert("Successfully logged in");
+      useNavigate("/components/About");
+      // <Route path="/about" component={About} />
       // e.target.email.value = "";
       // e.target.password.value = "";
     }
